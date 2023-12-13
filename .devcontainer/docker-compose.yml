@@ -1,0 +1,14 @@
+services:
+  rust_devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    image: rust-dev
+    container_name: rust-dev
+    volumes:
+      - type: bind
+        source: ..
+        target: /workspace
+        consistency: delegated
+    tty: true
+    stdin_open: true
